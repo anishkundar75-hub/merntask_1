@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Manager — Dark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">&#9700;</span>
+        <span class="logo-text">ItemVault</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <span class="nav-icon">&#9783;</span> Items
+        </a>
+      </nav>
+      <div class="sidebar-footer">CRUD App &copy; 2025</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Top Bar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">Item Management</h1>
+          <p class="page-subtitle">Add, edit and remove items in real-time</p>
+        </div>
+        <div class="topbar-right">
+          <span class="badge" id="item-count">0 Items</span>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="glass-card form-card">
+        <h2 class="card-title" id="form-heading">Add New Item</h2>
+
+        <form id="item-form">
+          <input type="hidden" id="item-id">
+
+          <div class="fields-row">
+            <div class="field-group">
+              <label for="item-name">Item Name</label>
+              <input
+                type="text"
+                id="item-name"
+                placeholder="e.g. Laptop"
+                required
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="field-group">
+              <label for="item-price">Price (&#8377;)</label>
+              <input
+                type="number"
+                id="item-price"
+                placeholder="e.g. 999"
+                step="any"
+                required
+              >
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="cancel-btn" class="btn btn-ghost" style="display:none;">Cancel</button>
+              <button type="submit" id="submit-btn" class="btn btn-accent">&#43; Add Item</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Table Card -->
+      <div class="glass-card table-card">
+        <div class="table-header">
+          <span class="table-label">All Items</span>
+        </div>
+        <div class="table-wrap">
+          <table id="items-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th style="text-align:center;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="items-tbody">
+              <!-- Rows injected dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
